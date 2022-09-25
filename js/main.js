@@ -1,29 +1,25 @@
-if(!location.hash) {
-  location.hash = "#home";
-}
+$( document ).ready(function() {
+  $( "#main" ).load( "page/home.html" );
+  $( "#footer" ).load( "page/footer.html" );
 
-function getContent(fragmentId, callback){
-  var pages = {
-    competitionResult: competeResult,
-    welcome: welcomeContent,
-    news: news,
-    home: slide
-  };
+  // Home
+  $( "#a-home, #a-home-logo" ).click(function() {
+    $( "#main" ).load( "page/home.html" );
+  }); 
+  
+   // Welcome Result
+   $( "#a-welcome" ).click(function() {
+    $( "#main" ).load( "page/welcome.html" );
+  }); 
 
-  callback(pages[fragmentId]);
-}
-
-
-
-function loadContent(){
-  var contentDiv = document.getElementById("main");
-  var fragmentId = location.hash.substr(1);
-
-  getContent(fragmentId, function (content) {
-    contentDiv.innerHTML = content;
+   // Competition Result
+   $( "#a-news" ).click(function() {
+    $( "#main" ).load( "page/news.html" );
+  }); 
+  
+  // Competition Result
+  $( "#a-competition-result" ).click(function() {
+    $( "#main" ).load( "page/competeResult.html" );
   });
-}
 
-loadContent();
-
-window.addEventListener("hashchange", loadContent);
+});
