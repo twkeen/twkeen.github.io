@@ -25,5 +25,8 @@ a.menu-item:hover {color:#0000ff;}
 }
 
 .first-letter {
-  font-size: 200%;
+  font-size: 2rem;
+  color: #0099cc; 
+  font-family: Segoe Print;
+  font-weight: bold; 
 }
