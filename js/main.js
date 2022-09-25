@@ -27,5 +27,9 @@ $(document).ready(function() {
     $("#main").load("page/competeResult.html");
   });
 
-
+  // Past AMC problems and Solutions
+  $("body").on("click", "#a-amc", function() {
+    //$("#a-competition-result").click(function() {
+      $("#main").load("page/amc.html");
+    });
 });
