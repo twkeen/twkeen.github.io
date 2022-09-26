@@ -13,7 +13,7 @@ $(document).ready(function() {
     $("#main").load("page/welcome.html");
   }); 
 
-   // Competition Result
+   // News
    $("body").on("click", "#a-news", function() {
     $("#main").load("page/news.html");
   }); 
