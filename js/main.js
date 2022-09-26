@@ -28,10 +28,9 @@ $(document).ready(function() {
     $("#main").load("page/competeResult.html", function() {
       // build date links
       let dates = localStorage.getItem("competedates").split("\n");
-      //let dates = data.split("\n");
       $.each(dates, function (n, d) {
         let dateLink = '<div class="row">' +
-                  '  <div class="col-xs-12">A' +
+                  '  <div class="col-xs-12">' +
                   '    <a target="_blank" href="./file/competeResult/' + d + '.pdf">' + d + '</a>' +
                   '  </div>' +
                   '</div>';
