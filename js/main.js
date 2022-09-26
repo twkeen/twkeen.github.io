@@ -3,6 +3,12 @@ $(document).ready(function() {
   $("#main").load("page/home.html");
   $("#footer").load("page/footer.html");
 
+  // load compete result dates and store in localStorage
+  $.get('./data/competeDate.txt', function (data) {
+    alert(data);
+    localStorage.setItem("competedates", data);    
+  });
+
   // Home
   $("body").on("click", "#a-home, #a-home-logo", function() {
     $("#main").load("page/home.html");
@@ -20,20 +26,19 @@ $(document).ready(function() {
   
   // Competition Result
   $("body").on("click", "#a-competition-result", function() {
-    $("#main").load("page/competeResult.html");
-    // build date links
-    $.get('./data/competeDate.txt', function (data) {
-      let lines = data.split("\n");
-      $.each(lines, function (n, line) {
+    $("#main").load("page/competeResult.html", function() {
+      // build date links
+      let data = localStorage.getItem("competedates");
+      let dates = data.split("\n");
+      $.each(dates, function (n, d) {
         let dateLink = '<div class="row">' +
                   '  <div class="col-xs-12">' +
-                  '    <a target="_blank" href="./file/competeResult/' + line + '.pdf">' + line + '</a>' +
+                  '    <a target="_blank" href="./file/competeResult/' + d + '.pdf">' + d + '</a>' +
                   '  </div>' +
                   '</div>';
         $('#div-dates').append(dateLink);
-      });
-    });
-  
+      }); // end $.each
+    }); // end $("main").load
   });
 
   // Past AMC problems and Solutions from AOPS
