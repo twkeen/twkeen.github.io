@@ -27,11 +27,11 @@ $(document).ready(function() {
   $("body").on("click", "#a-competition-result", function() {
     $("#main").load("page/competeResult.html", function() {
       // build date links
-      let data = localStorage.getItem("competedates");
-      let dates = data.split("\n");
+      let dates = localStorage.getItem("competedates").split("\n");
+      //let dates = data.split("\n");
       $.each(dates, function (n, d) {
         let dateLink = '<div class="row">' +
-                  '  <div class="col-xs-12">' +
+                  '  <div class="col-xs-12">A' +
                   '    <a target="_blank" href="./file/competeResult/' + d + '.pdf">' + d + '</a>' +
                   '  </div>' +
                   '</div>';
