@@ -8,7 +8,7 @@ $(document).ready(function() {
     $("#main").load("page/home.html");
   }); 
   
-   // Welcome Result
+   // Welcome
    $("body").on("click", "#a-welcome", function() {
     $("#main").load("page/welcome.html");
   }); 
@@ -36,7 +36,8 @@ $(document).ready(function() {
   
   });
 
-  // Past AMC problems and Solutions
+  // Past AMC problems and Solutions from AOPS
+  // AMC Practice from MAA
   $("body").on("click", "#a-amc", function() {
       $("#main").load("page/amc.html");
     });
