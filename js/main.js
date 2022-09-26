@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   // load compete result dates and store in localStorage
   $.get('./data/competeDate.txt', function (data) {
-    alert(data);
     localStorage.setItem("competedates", data);    
   });
 
