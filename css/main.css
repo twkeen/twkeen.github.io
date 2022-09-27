@@ -30,3 +30,7 @@ a.menu-item:hover {color:#0000ff;}
   font-family: Segoe Print;
   font-weight: bold; 
 }
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
