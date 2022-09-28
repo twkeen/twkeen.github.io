@@ -3,10 +3,7 @@ $(document).ready(function() {
   $("#main").load("page/home.html");
   $("#footer").load("page/footer.html");
 
-  // load compete result dates and store in localStorage
-  $.get('./data/competeDate.txt', function (data) {
-    localStorage.setItem("competedates", data);    
-  });
+  loadCompeteDates();
 
   // Home
   $("body").on("click", "#a-home, #a-home-logo", function() {
@@ -27,6 +24,9 @@ $(document).ready(function() {
   $("body").on("click", "#a-competition-result", function() {
     $("#main").load("page/competeResult.html", function() {
       // build date links
+      if (localStorage.getItem('competedates') === null) {
+        loadCompeteDates();
+      }
       let dates = localStorage.getItem("competedates").split("\n");
       $.each(dates, function (n, d) {
         let dateLink = '<div class="row">' +
@@ -43,5 +43,14 @@ $(document).ready(function() {
   // AMC Practice from MAA
   $("body").on("click", "#a-amc", function() {
       $("#main").load("page/amc.html");
+  });
+
+  // load compete result dates and store in localStorage
+  function loadCompeteDates()
+  {
+    $.get('./data/competeDate.txt', function (data) {
+      localStorage.setItem("competedates", data);    
     });
+  }
+
 });
