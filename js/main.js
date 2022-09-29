@@ -1,28 +1,28 @@
 $(document).ready(function() {
-  $("#header").load("page/header.html");
-  $("#main").load("page/home.html");
-  $("#footer").load("page/footer.html");
+  $("#header").load("./page/header.html");
+  $("#main").load("./page/home.html");
+  $("#footer").load("./page/footer.html");
 
   loadCompeteDates();
 
   // Home
   $("body").on("click", "#a-home, #a-home-logo", function() {
-    $("#main").load("page/home.html");
+    $("#main").load("./page/home.html");
   }); 
   
    // Welcome
    $("body").on("click", "#a-welcome", function() {
-    $("#main").load("page/welcome.html");
+    $("#main").load("./page/welcome.html");
   }); 
 
    // News
    $("body").on("click", "#a-news", function() {
-    $("#main").load("page/news.html");
+    $("#main").load("./page/news.html");
   }); 
   
   // Competition Result
   $("body").on("click", "#a-competition-result", function() {
-    $("#main").load("page/competeResult.html", function() {
+    $("#main").load("./page/competeResult.html", function() {
       // build date links
       if (localStorage.getItem('competedates') === null) {
         loadCompeteDates();
@@ -42,7 +42,7 @@ $(document).ready(function() {
   // Past AMC problems and Solutions from AOPS
   // AMC Practice from MAA
   $("body").on("click", "#a-amc", function() {
-      $("#main").load("page/amc.html");
+      $("#main").load("./page/amc.html");
   });
 
   // load compete result dates and store in localStorage
