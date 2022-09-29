@@ -32,5 +32,5 @@ a.menu-item:hover {color:#0000ff;}
 }
 
 .custom-tooltip {
-  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-bg: var(--bs-success);
 }
